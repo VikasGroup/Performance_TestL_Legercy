@@ -11,7 +11,9 @@ Then user click on login button
 And validate the landing page "<DB_page _link>"
 And user click on shop link
 And validate the landing page "<Pro_page _link>"
-
+And set Database "<round>"
 Examples:
-    |IR_ID   | password|Login_Page                                                                 |DB_page _link                                                          |Pro_page _link                                                           |
-	|PQ001352|testpw   |https://portal.qnet.net.ph/VirtualOffice4/onlineestore/Online_Login_PH.aspx|https://portal.qnet.net.ph/VirtualOffice4/OnlineEStore/PopupsLoad.aspx |https://portal.qnet.net.ph/eStore4/products.aspx?Category=5011000&type=#|
+    |round|IR_ID   | password|
+	|1|PQ001352|testpw   |
+	|2|PQ001352|testpw   |
+	|3|PQ001352|testpw   |
