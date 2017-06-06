@@ -1,6 +1,6 @@
 package vikas;
 
-public class WPProductPgObj {
+public class MYProductPgObj {
 //test
 	
 }

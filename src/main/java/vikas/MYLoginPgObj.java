@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 
 import com.steps.PerfSteps;
 
-public class WPLoginPgObj {
+public class MYLoginPgObj {
 
 	
 	public WebElement irid_txt = PerfSteps.driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtTCO"));

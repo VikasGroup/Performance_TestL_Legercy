@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 
 import com.steps.PerfSteps;
 
-public class WPDashboardPgObj {
+public class MYDashboardPgObj {
 
 
 	
