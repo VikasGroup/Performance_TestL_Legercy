@@ -67,7 +67,7 @@ public class PerfSteps {
 	@Then("^user click on shop link$")
 	public void user_click_on_shop_link() throws Throwable {
 		myDashboardPgObj = new MYDashboardPgObj();
-		myDashboardPgObj.click_close();
+		
 	    myDashboardPgObj.click_shop();
 	    driver.close();
 	}
