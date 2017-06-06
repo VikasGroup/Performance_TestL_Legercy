@@ -6,16 +6,17 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import vikas.WPDashboardPgObj;
-import vikas.WPHomePgObj;
-import vikas.WPLoginPgObj;
+import vikas.RWDashboardPgObj;
+import vikas.RWHomePgObj;
+import vikas.RWLoginPgObj;
+
 
 public class PerfSteps {
 	
 	public static WebDriver driver = new FirefoxDriver();;
-	WPHomePgObj wpHomePgObj;
-	WPLoginPgObj wpLoginPgObj;
-	WPDashboardPgObj wpDashboardPgObj;
+	RWHomePgObj rwHomePgObj;
+	RWLoginPgObj rwLoginPgObj;
+	RWDashboardPgObj rwDashboardPgObj;
 
 
 	@Given("^user direct to the site$")
@@ -29,32 +30,32 @@ public class PerfSteps {
 
 	@When("^user click on Login button$")
 	public void user_click_on_Login_button() throws Throwable {
-		 wpHomePgObj= new WPHomePgObj();
-	    wpHomePgObj.click_irlogin();
+		 rwHomePgObj= new RWHomePgObj();
+	    rwHomePgObj.click_irlogin();
 	 
 	}
 	
 	@When("^validate login page \"([^\"]*)\"$")
 	public void validate_login_page(String arg1) throws Throwable {
-	   
+	   Thread.sleep(5000);
 	}
 
 	@When("^user enter a valid ID \"([^\"]*)\"$")
 	public void user_enter_a_valid_ID(String arg1) throws Throwable {
-		wpLoginPgObj = new WPLoginPgObj();
-	    wpLoginPgObj.enter_irid(arg1);
+		rwLoginPgObj = new RWLoginPgObj();
+	    rwLoginPgObj.enter_irid(arg1);
 	 
 	}
 
 	@When("^user enter a password \"([^\"]*)\"$")
 	public void user_enter_a_password(String arg1) throws Throwable {
-	    wpLoginPgObj.enter_pwd(arg1);
+	    rwLoginPgObj.enter_pwd(arg1);
 	
 	}
 
 	@Then("^user click on login button$")
 	public void user_click_on_login_button() throws Throwable {
-	    wpLoginPgObj.click_login();
+	    rwLoginPgObj.click_login();
 	 
 	}
 
@@ -66,9 +67,9 @@ public class PerfSteps {
 
 	@Then("^user click on shop link$")
 	public void user_click_on_shop_link() throws Throwable {
-		wpDashboardPgObj = new WPDashboardPgObj();
-		wpDashboardPgObj.click_close();
-	    wpDashboardPgObj.click_shop();
+		rwDashboardPgObj = new RWDashboardPgObj();
+		
+	    rwDashboardPgObj.click_shop();
 	    driver.close();
 	}
 	

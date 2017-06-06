@@ -5,12 +5,12 @@ import org.openqa.selenium.WebElement;
 
 import com.steps.PerfSteps;
 
-public class WPLoginPgObj {
+public class RWLoginPgObj {
 
 	
 	public WebElement irid_txt = PerfSteps.driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtTCO"));
 	public WebElement pwd_txt = PerfSteps.driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtPassword"));
-	public WebElement login_btn = PerfSteps.driver.findElement(By.id("ctl00_ContentPlaceHolder1_btnLogin"));
+	public WebElement login_btn = PerfSteps.driver.findElement(By.xpath("ctl00_ContentPlaceHolder1_btnLogin"));
 	
 	public void enter_irid(String value){
 		irid_txt.sendKeys(value);

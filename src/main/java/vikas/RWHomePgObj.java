@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 
 import com.steps.PerfSteps;
 
-public class WPHomePgObj {
+public class RWHomePgObj {
 
 	
 	public WebElement irlogin_lnk = PerfSteps.driver.findElement(By.id("ctl00_ctl11_hlLogin"));
