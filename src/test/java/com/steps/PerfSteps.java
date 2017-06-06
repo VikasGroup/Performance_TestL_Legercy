@@ -68,6 +68,7 @@ public class PerfSteps {
 		  driver.switchTo().window(tabs2.get(2));
 		  driver.switchTo().window(tabs2.get(2)).close();
 		  driver.switchTo().window(tabs2.get(1)).close();
+		  driver.switchTo().window(tabs2.get(0));
 	 
 	}
 
