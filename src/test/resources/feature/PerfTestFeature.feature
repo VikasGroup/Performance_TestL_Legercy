@@ -1,4 +1,4 @@
-Feature: WP Performance Test
+Feature: Turkey Performance Test
 
 @Reg
 Scenario Outline: 
@@ -13,5 +13,5 @@ And user click on shop link
 And validate the landing page "<Pro_page _link>"
 
 Examples:
-    |IR_ID   | password|Login_Page                                                              |DB_page _link                                                       |Pro_page _link                                                           |
-	|HZ846273|testpw   |https://portal.qnet.net/VirtualOffice4/onlineestore/Online_Login_VO.aspx|https://portal.qnet.net/VirtualOffice4/OnlineEStore/PopupsLoad.aspx |https://portal.qnet.net/eStore4/products.aspx?Category=5011000&type=HIGH#|
+    |IR_ID   | password|
+	|TK039226|testpw   |
