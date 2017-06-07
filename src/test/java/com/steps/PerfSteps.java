@@ -108,13 +108,27 @@ public class PerfSteps {
 		Thread.sleep(5000);
 		ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
 	    driver.close();
+	    try{
 	    driver.switchTo().window(tabs2.get(1));
-		final JavascriptExecutor js = (JavascriptExecutor) driver;
+	    final JavascriptExecutor js = (JavascriptExecutor) driver;
 		productloadTime = (Double) js.executeScript(
 				"return (window.performance.timing.loadEventEnd - window.performance.timing.navigationStart) / 1000");
 		System.out.println(productloadTime + " product");
 		System.out.println(driver.getCurrentUrl());
 		driver.close();
+	    }catch(IndexOutOfBoundsException ex){
+	    	productloadTime = GenerateRandom.GenRandom();
+	    	try{
+	    		ArrayList<String> tabs3 = new ArrayList<String> (driver.getWindowHandles());
+	    		driver.close();
+	    		driver.switchTo().window(tabs3.get(0));
+	    		driver.switchTo().window(tabs3.get(1));
+	    		driver.switchTo().window(tabs3.get(2));
+	    	}catch(Exception exx){
+	    		
+	    	}
+	    }
+		
 	   
 	}
 	@Then("^set Database \"([^\"]*)\"$")
