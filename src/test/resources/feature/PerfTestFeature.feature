@@ -11,7 +11,9 @@ Then user click on login button
 And validate the landing page "<DB_page _link>"
 And user click on shop link
 And validate the landing page "<Pro_page _link>"
-
+And set Database "<round>"
 Examples:
-    |IR_ID   | password|
-	|TK039226|testpw   |
+   |round |IR_ID   | password|
+	|1|TK039226|testpw   |
+	|2|TK039226|testpw   |
+	|3|TK039226|testpw   |
