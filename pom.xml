@@ -3,7 +3,7 @@
   <groupId>PgObjectWP</groupId>
   <artifactId>vikas</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-    <dependencies>
+ <dependencies>
   <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
 <dependency>
 			<groupId>info.cukes</groupId>
@@ -56,4 +56,5 @@
             </plugin>
         </plugins>
     </build>
+ 
 </project>
