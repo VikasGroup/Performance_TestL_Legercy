@@ -121,9 +121,9 @@ public class PerfSteps {
 	    	try{
 	    		ArrayList<String> tabs3 = new ArrayList<String> (driver.getWindowHandles());
 	    		driver.close();
-	    		driver.switchTo().window(tabs3.get(0));
-	    		driver.switchTo().window(tabs3.get(1));
-	    		driver.switchTo().window(tabs3.get(2));
+	    		driver.switchTo().window(tabs3.get(0)).close();
+	    		driver.switchTo().window(tabs3.get(1)).close();
+	    		driver.switchTo().window(tabs3.get(2)).close();
 	    	}catch(Exception exx){
 	    		
 	    	}
