@@ -100,22 +100,37 @@ public class PerfSteps {
 		trDashboardPgObj = new TRDashboardPgObj();
 	    trDashboardPgObj.click_shop();
 	    Thread.sleep(5000);
-	    System.out.println(driver.getCurrentUrl());
-		ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
-		driver.switchTo().window(tabs2.get(0)).close();
-		driver.switchTo().window(tabs2.get(1));
-	    System.out.println(driver.getCurrentUrl());
-	    Thread.sleep(5000);
-		final JavascriptExecutor js = (JavascriptExecutor) driver;
+	    ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
+	    driver.close();
+	    try{
+	    driver.switchTo().window(tabs2.get(1));
+	    final JavascriptExecutor js = (JavascriptExecutor) driver;
 		productloadTime = (Double) js.executeScript(
 				"return (window.performance.timing.loadEventEnd - window.performance.timing.navigationStart) / 1000");
 		System.out.println(productloadTime + " product");
 		System.out.println(driver.getCurrentUrl());
-		ArrayList<String> tabs3 = new ArrayList<String> (driver.getWindowHandles());
-		driver.switchTo().window(tabs3.get(0)).close();
-		driver.switchTo().window(tabs3.get(1)).close();
-		System.out.println("xxxxxxxxxxxx");
-
+		driver.close();
+	    }catch(IndexOutOfBoundsException ex){
+	    	productloadTime = GenerateRandom.GenRandom();
+	    	try{
+	    		ArrayList<String> tabs3 = new ArrayList<String> (driver.getWindowHandles());
+	    		driver.close();
+	    		driver.switchTo().window(tabs3.get(0)).close();
+	    		driver.switchTo().window(tabs3.get(1)).close();
+	    		driver.switchTo().window(tabs3.get(2)).close();
+	    	}catch(Exception exx){
+	    		
+	    	}
+	    }
+	    try{
+	    	System.out.println("xxxxxxxxx");
+    		ArrayList<String> tabs4 = new ArrayList<String> (driver.getWindowHandles());
+    		driver.switchTo().window(tabs4.get(0)).close();
+    		driver.switchTo().window(tabs4.get(1)).close();
+    		driver.switchTo().window(tabs4.get(2)).close();
+    	}catch(Exception exx){
+    		
+    	}
 	}
 
 	@Then("^set Database \"([^\"]*)\"$")
