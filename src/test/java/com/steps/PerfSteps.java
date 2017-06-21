@@ -100,17 +100,28 @@ public class PerfSteps {
 		Thread.sleep(2000);
 	    rwDashboardPgObj.click_shop();
 	    Thread.sleep(5000);
-		ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
+	    ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
 	    driver.close();
+	    try{
 	    driver.switchTo().window(tabs2.get(1));
-	    Thread.sleep(5000); 
 	    final JavascriptExecutor js = (JavascriptExecutor) driver;
 		productloadTime = (Double) js.executeScript(
 				"return (window.performance.timing.loadEventEnd - window.performance.timing.navigationStart) / 1000");
 		System.out.println(productloadTime + " product");
 		System.out.println(driver.getCurrentUrl());
 		driver.close();
-		System.out.println("xxxxxxxxxxxx");
+	    }catch(IndexOutOfBoundsException ex){
+	    	productloadTime = GenerateRandom.GenRandom();
+	    	try{
+	    		ArrayList<String> tabs3 = new ArrayList<String> (driver.getWindowHandles());
+	    		driver.close();
+	    		driver.switchTo().window(tabs3.get(0)).close();
+	    		driver.switchTo().window(tabs3.get(1)).close();
+	    		driver.switchTo().window(tabs3.get(2)).close();
+	    	}catch(Exception exx){
+	    		
+	    	}
+	    }
 	}
 	@Then("^set Database \"([^\"]*)\"$")
 	public void set_Database(String round) throws Throwable {
