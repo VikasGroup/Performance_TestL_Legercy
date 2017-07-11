@@ -35,6 +35,7 @@ public class PerfSteps {
 	Date date = new Date();
 	String datenow = dateFormat.format(date) + " " + "00:00:00";
 
+	
 
 	@Given("^user direct to the site$")
 	public void user_direct_to_the_site() throws Throwable {
