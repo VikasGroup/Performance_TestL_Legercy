@@ -122,6 +122,15 @@ public class PerfSteps {
 	    		
 	    	}
 	    }
+	    try{
+    		ArrayList<String> tabs4 = new ArrayList<String> (driver.getWindowHandles());
+    		
+    		driver.switchTo().window(tabs4.get(0)).close();
+    		driver.switchTo().window(tabs4.get(1)).close();
+    		driver.switchTo().window(tabs4.get(2)).close();
+    	}catch(Exception exx){
+    		
+    	}
 	}
 	@Then("^set Database \"([^\"]*)\"$")
 	public void set_Database(String round) throws Throwable {
