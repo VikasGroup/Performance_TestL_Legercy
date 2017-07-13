@@ -115,10 +115,15 @@ public class PerfSteps {
 		    	productloadTime = GenerateRandom.GenRandom();
 		    	try{
 		    		ArrayList<String> tabs3 = new ArrayList<String> (driver.getWindowHandles());
-		    		driver.close();
+		    		try{
 		    		driver.switchTo().window(tabs3.get(0)).close();
+		    		}catch(Exception sf){
+		    		try{
 		    		driver.switchTo().window(tabs3.get(1)).close();
+		    		}catch(Exception sd){
 		    		driver.switchTo().window(tabs3.get(2)).close();
+		    		}}
+		    		
 		    	}catch(Exception exx){
 		    		
 		    	}
