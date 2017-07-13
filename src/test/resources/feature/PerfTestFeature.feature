@@ -9,6 +9,7 @@ And user enter a password "<password>"
 Then user click on login button
 And user click on shop link
 And set Database "<round>"
+
 Examples:
     | round|IR_ID   | password|
 	|1|HZ846273|testpw   |
