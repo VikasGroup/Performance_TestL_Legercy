@@ -97,7 +97,7 @@ public class PerfSteps {
 	@Then("^user click on shop link$")
 	public void user_click_on_shop_link() throws Throwable {
 		wpDashboardPgObj = new WPDashboardPgObj();
-		wpDashboardPgObj.click_close();
+		//wpDashboardPgObj.click_close();
 		Thread.sleep(2000);
 		wpDashboardPgObj.click_shop();
 		Thread.sleep(5000);
